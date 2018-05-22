@@ -1,5 +1,5 @@
 # source: https://eu1.prisma.sh/rubenbuitelaar-e1a222/prisma/dev
-# timestamp: Mon May 21 2018 12:03:14 GMT+0200 (W. Europe Daylight Time)
+# timestamp: Tue May 22 2018 10:46:54 GMT+0200 (CEST)
 
 type AggregatePost {
   count: Int!

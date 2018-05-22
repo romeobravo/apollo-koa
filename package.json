@@ -9,6 +9,7 @@
     "dev": "nodemon -e ts,graphql -x ts-node src/app.ts",
     "prestart": "npm run build",
     "start": "node build/app.js",
+    "deploy": "npm run deploy:prisma && npm run deploy:koa",
     "deploy:prisma": "prisma deploy",
     "postdeploy:prisma": "npm run generate",
     "predeploy:koa": "node scripts/up.js && npm run build",
@@ -38,8 +39,10 @@
     "@types/koa-bodyparser": "^4.2.0",
     "@types/koa-router": "^7.0.28",
     "@types/koa2-cors": "^2.0.1",
+    "graphql-cli": "^2.16.0",
     "nodemon": "^1.17.4",
     "prettier": "^1.12.1",
+    "ts-node": "^6.0.3",
     "typescript": "^2.8.3"
   }
 }
