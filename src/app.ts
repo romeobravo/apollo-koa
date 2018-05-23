@@ -19,7 +19,7 @@ app.use((ctx, next) => {
   const start = Date.now()
   return next().then(() => {
     const ms = Date.now() - start
-    console.log(`${ctx.request.body} - ${ms}ms`)
+    console.log(`${ms}ms - ${ctx.body}`)
   })
 })
 

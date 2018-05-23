@@ -21,8 +21,8 @@ const resolvers = {
     },
   },
   Mutation: {
-    createDraft(parent, { title, text }, context: Context, info) {
-      return context.db.mutation.createPost({ data: { title, text } }, info)
+    createDraft(parent, { title, text, user }, context: Context, info) {
+      return context.db.mutation.createPost({ data: { title, text, user: { connect: { id: user } } } }, info)
     },
     deletePost(parent, { id }, context: Context, info) {
       return context.db.mutation.deletePost({ where: { id } }, info)

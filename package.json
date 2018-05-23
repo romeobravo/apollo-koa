@@ -12,8 +12,10 @@
     "deploy": "npm run deploy:prisma && npm run deploy:koa",
     "deploy:prisma": "prisma deploy",
     "postdeploy:prisma": "npm run generate",
+    "deploy:prisma:staging": "dotenv -e .env.staging -- prisma deploy",
     "predeploy:koa": "node scripts/up.js && npm run build",
     "deploy:koa": "up deploy production",
+    "docker": "docker-compose -f prisma/docker-compose.yml up -d",
     "generate:schema": "graphql get-schema --project database",
     "generate:types": "graphql prepare",
     "generate": "npm run generate:schema && npm run generate:types"
@@ -39,6 +41,7 @@
     "@types/koa-bodyparser": "^4.2.0",
     "@types/koa-router": "^7.0.28",
     "@types/koa2-cors": "^2.0.1",
+    "dotenv-cli": "^1.4.0",
     "graphql-cli": "^2.16.0",
     "nodemon": "^1.17.4",
     "prettier": "^1.12.1",
